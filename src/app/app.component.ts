@@ -10,24 +10,17 @@ import { UnitFactory } from '../game/unit-factory';
 export class AppComponent implements OnInit {
 
   public engine: Engine;
-  public knight;
 
   ngOnInit() {
     this.engine = new Engine(256, 256, 'game');
-    this.knight = UnitFactory.buildKnight();
-    this.knight.bind("AnimationEnd", (reel) => {
-      if (reel.id == 'reviving') {
-        this.knight.animate('standing', -1);
-      }
-    });
   }
 
   public killDude(): void {
-    this.knight.animate('dying');
+    this.engine.enterScene('Stage_2');
   }
 
   public reviveDude(): void {
-    this.knight.animate('reviving');
+    this.engine.enterScene('Stage_1');
   }
 
 }
