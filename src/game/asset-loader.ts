@@ -11,7 +11,7 @@ export abstract class AssetLoader {
             enemy_3: [17, 10],
             enemy_4: [18, 10],
             turret_1: [19, 10],
-            bullet: [22, 11]
+            bullet_1: [22, 11]
           }
         }
       }
